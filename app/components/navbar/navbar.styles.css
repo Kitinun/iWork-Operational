@@ -1,0 +1,215 @@
+/* ==========================================================================
+   Navbar Component Styles
+   ========================================================================== */
+
+/* Main Navigation Bar
+   ========================================================================== */
+.navbar {
+  background: var(--primary);
+  padding: 0;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.navbar-content {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+}
+
+/* Brand
+   ========================================================================== */
+.navbar-brand {
+  font-size: var(--space-lg);
+  font-weight: bold;
+  color: var(--white);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* Navigation Menu
+   ========================================================================== */
+.navbar-menu {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--white);
+  text-decoration: none;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* User Menu
+   ========================================================================== */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-menu:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Mobile Menu Toggle
+   ========================================================================== */
+.menu-toggle {
+  display: none;
+  color: var(--white);
+  font-size: var(--space-lg);
+  cursor: pointer;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+
+/* Desktop Large (1280px+)
+   ========================================================================== */
+@media (min-width: 1280px) {
+  .navbar-content {
+    padding: var(--space-md) var(--space-lg);
+  }
+}
+
+/* Desktop/Laptop (1024px - 1279px)
+   ========================================================================== */
+@media (max-width: 1279px) {
+  .navbar-content {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .navbar-menu {
+    gap: var(--space-sm);
+  }
+}
+
+/* Tablet Landscape (768px - 1023px)
+   ========================================================================== */
+@media (max-width: 1023px) {
+  .nav-link {
+    font-size: 0.9rem;
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .user-menu span {
+    display: none;
+  }
+}
+
+/* Mobile (<= 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--primary);
+    padding: var(--space-sm);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .navbar-menu.active {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+  }
+
+  .nav-link {
+    padding: var(--space-sm);
+    text-align: center;
+  }
+
+  .user-menu {
+    justify-content: center;
+    margin-top: var(--space-sm);
+    padding: var(--space-sm);
+  }
+
+  .user-menu span {
+    display: inline;
+  }
+}
+
+/* Small Devices (<= 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .navbar-content {
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .navbar-brand {
+    font-size: var(--space-md);
+  }
+
+  .user-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra Small Devices (<= 320px)
+   ========================================================================== */
+@media (max-width: 320px) {
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .user-menu {
+    font-size: 0.8rem;
+  }
+}

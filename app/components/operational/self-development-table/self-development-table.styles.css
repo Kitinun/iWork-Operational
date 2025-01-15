@@ -1,0 +1,228 @@
+/* ==========================================================================
+  Self Development Table Component Styles
+  ========================================================================== */
+
+/* Main Container
+  ========================================================================== */
+.self-development-section {
+  background-color: #fef6ed;
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+}
+
+/* Header Section
+   ========================================================================== */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.section-header {
+  color: var(--text-dark);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+}
+
+/* Add Button
+   ========================================================================== */
+.add-button {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.add-button:hover {
+  opacity: 0.9;
+}
+
+/* Table Container
+   ========================================================================== */
+.table-container {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Table Styles
+   ========================================================================== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+.table th {
+  background-color: var(--gray-50);
+  padding: var(--space-md);
+  font-weight: 500;
+  text-align: left;
+  border: 1px solid var(--border-color);
+}
+
+.table td {
+  padding: var(--space-md);
+  border: 1px solid var(--border-color);
+  vertical-align: top;
+}
+
+/* Action Buttons
+   ========================================================================== */
+.action-buttons {
+  display: flex;
+  gap: var(--space-xs);
+  justify-content: center;
+}
+
+.btn {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  min-width: 60px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-edit {
+  background-color: var(--success);
+  color: var(--white);
+}
+
+.btn-delete {
+  background-color: var(--danger);
+  color: var(--white);
+}
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+
+/* Desktop Large (1440px+)
+   ========================================================================== */
+@media (min-width: 1440px) {
+  .self-development-section {
+    padding: var(--space-xl);
+  }
+
+  .table-container {
+    margin: 0 auto;
+    max-width: var(--container-width);
+  }
+}
+
+/* Desktop (1024px - 1439px)
+   ========================================================================== */
+@media (max-width: 1439px) {
+  .self-development-section {
+    padding: var(--space-lg);
+  }
+}
+
+/* Tablet Landscape (768px - 1023px)
+   ========================================================================== */
+@media (max-width: 1023px) {
+  .self-development-section {
+    padding: var(--space-md);
+  }
+
+  .table {
+    min-width: 1200px;
+  }
+
+  .table td,
+  .table th {
+    padding: var(--space-sm);
+  }
+}
+
+/* Tablet Portrait (481px - 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .header-container {
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: stretch;
+  }
+
+  .section-header {
+    text-align: center;
+  }
+
+  .add-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .table {
+    min-width: 1400px;
+  }
+}
+
+/* Mobile (320px - 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .self-development-section {
+    padding: var(--space-sm);
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    padding: var(--space-xs);
+  }
+}
+
+/* Extra Small Devices
+   ========================================================================== */
+@media (max-width: 320px) {
+  .section-header {
+    font-size: var(--font-size-sm);
+  }
+
+  .add-button {
+    font-size: 0.8rem;
+  }
+}
+
+/* Print Styles
+   ========================================================================== */
+@media print {
+  .self-development-section {
+    background: none;
+    padding: 0;
+  }
+
+  .add-button {
+    display: none;
+  }
+
+  .table {
+    border: 1px solid var(--border-color);
+  }
+}
+
+/* Touch Device Optimizations
+   ========================================================================== */
+@media (hover: none) {
+  .btn {
+    min-height: 44px;
+  }
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+}

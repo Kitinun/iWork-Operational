@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  flex: 1 0 auto; /* ทำให้ container ขยายเต็มพื้นที่ที่เหลือ */
+  padding: var(--space-4) var(--space-3);
+}
+
+.footer {
+  flex-shrink: 0; /* ป้องกันไม่ให้ footer หดตัว */
+  background: linear-gradient(
+    90deg,
+    var(--primary-light) 0%,
+    var(--primary) 100%
+  );
+  color: var(--white);
+  padding: var(--space-3) var(--space-4);
+  width: 100%;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .no-data {
+    padding: var(--space-lg);
+  }
+
+  .no-data-icon {
+    font-size: 2.5rem;
+  }
+
+  .no-data-text {
+    font-size: var(--font-size-base);
+  }
+
+  .no-data-subtext {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Confirm Button
+   ========================================================================== */
+.confirm-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-xl);
+}
+
+.confirm-button {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.confirm-button:hover {
+  opacity: 0.9;
+}
+
+/* Extra Small Devices
+       ========================================================================== */

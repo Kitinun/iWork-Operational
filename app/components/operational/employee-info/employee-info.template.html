@@ -1,0 +1,38 @@
+<div class="employee-profile">
+  <div class="profile-left">
+    <img
+      ng-src="{{employee.photoUrl || '/assets/images/IMG_7692.JPG'}}"
+      alt="{{employee.name}}"
+      class="profile-photo"
+    />
+  </div>
+
+  <div class="profile-info">
+    <h2 class="profile-name">{{employee.name}}</h2>
+    <div class="info-list">
+      <div class="info-item">
+        <span class="info-label">ตำแหน่ง :</span>
+        <span class="info-value">{{employee.position}}</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">หน่วยงาน :</span>
+        <span class="info-value">{{employee.department}}</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">งาน :</span>
+        <span class="info-value">{{employee.work}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="supervisor-info">
+    <div class="supervisor-item">
+      <span class="supervisor-label">ผู้บังคับบัญชาระดับเหนือขึ้นไป :</span>
+      <span class="supervisor-value">{{employee.evaluationLevel1}}</span>
+    </div>
+    <div class="supervisor-item">
+      <span class="supervisor-label">ผู้บังคับบัญชาระดับต้น :</span>
+      <span class="supervisor-value">{{employee.evaluationLevel2}}</span>
+    </div>
+  </div>
+</div>

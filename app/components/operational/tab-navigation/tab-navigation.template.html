@@ -1,0 +1,41 @@
+<div class="tab-container">
+  <div class="tab-navigation">
+    <button
+      class="tab-button"
+      ng-repeat="tab in tabs"
+      ng-class="{'active': selectedTab === tab.id}"
+      ng-click="selectTab(tab.id)"
+    >
+      {{tab.title}}
+    </button>
+  </div>
+
+  <div class="tab-content" ng-show="selectedTab === 'main'">
+    <!-- เนื้อหาของ ภาระงานหลักและผลการปฏิบัติงาน -->
+    <iw-performance-table
+      criteria="criteria"
+      exam-supervisions="meetings"
+      on-edit="onEdit({item: item})"
+      on-delete="onDelete({item: item})"
+      on-edit-exam="onEdit({item: exam})"
+      on-delete-exam="onDelete({item: exam})"
+    >
+    </iw-performance-table>
+  </div>
+  <div class="tab-content" ng-show="selectedTab === 'strategy'">
+    <!-- เนื้อหาของ การพัฒนางานและงานสนับสนุนยุทธศาสตร์มหาวิทยาลัย -->
+    <iw-strategy-table
+      on-edit="onEdit({item: item})"
+      on-delete="onDelete({item: item})"
+    >
+    </iw-strategy-table>
+  </div>
+  <div class="tab-content" ng-show="selectedTab === 'development'">
+    <!-- เนื้อหาของ งานการพัฒนาตนเอง -->
+    <iw-self-development-table
+      on-edit="onEdit({item: item})"
+      on-delete="onDelete({item: item})"
+    >
+    </iw-self-development-table>
+  </div>
+</div>

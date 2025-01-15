@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html ng-app="iWorkApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iWork - ระบบประเมินสายปฏิบัติงาน</title>
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="app/styles/variables.css" />
+    <link rel="stylesheet" href="app/styles/global.css" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Core Components Styles -->
+    <link rel="stylesheet" href="app/components/navbar/navbar.styles.css" />
+    <link rel="stylesheet" href="app/components/footer/footer.styles.css" />
+
+    <!-- Operational Components Styles -->
+    <link
+      rel="stylesheet"
+      href="app/components/operational/evaluation-period/evaluation-period.styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="app/components/operational/employee-info/employee-info.styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="app/components/operational/tab-navigation/tab-navigation.styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="app/components/operational/performance-table/performance-table.styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="app/components/operational/strategy-table/strategy-table.styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="app/components/operational/self-development-table/self-development-table.styles.css"
+    />
+
+    <!-- Modal Components Styles -->
+    <link
+      rel="stylesheet"
+      href="app/components/operational/performance-table/performance-form/performance-form.styles.css"
+    />
+
+    <!-- External Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+
+    <!-- App Core -->
+    <script src="app.js"></script>
+
+    <!-- Core Components -->
+    <script src="app/components/navbar/navbar.directive.js"></script>
+    <script src="app/components/footer/footer.directive.js"></script>
+
+    <!-- Operational Components -->
+    <script src="app/components/operational/evaluation-period/evaluation-period.directive.js"></script>
+    <script src="app/components/operational/employee-info/employee-info.directive.js"></script>
+    <script src="app/components/operational/tab-navigation/tab-navigation.directive.js"></script>
+    <script src="app/components/operational/performance-table/performance-table.directive.js"></script>
+    <script src="app/components/operational/strategy-table/strategy-table.directive.js"></script>
+    <script src="app/components/operational/self-development-table/self-development-table.directive.js"></script>
+
+    <!-- Modal Components -->
+    <script src="app/components/operational/performance-table/performance-form/performance-form.directive.js"></script>
+  </head>
+
+  <body ng-controller="PerformanceController">
+    <!-- Navigation -->
+    <iw-navbar></iw-navbar>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="card">
+        <!-- Header Information -->
+        <iw-evaluation-period period="evaluationPeriod"></iw-evaluation-period>
+        <iw-employee-info employee="employee"></iw-employee-info>
+
+        <!-- Operational Content -->
+        <div ng-if="currentPage === 'operational'">
+          <iw-tab-navigation
+            criteria="performanceCriteria"
+            meetings="meetings"
+            on-edit="edit(item)"
+            on-delete="delete(item)"
+          >
+          </iw-tab-navigation>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <iw-footer></iw-footer>
+  </body>
+</html>

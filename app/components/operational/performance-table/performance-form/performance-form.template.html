@@ -1,0 +1,53 @@
+<div class="modal-overlay" ng-if="isOpen">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>ภาระงานหลักและผลการปฏิบัติงาน</h3>
+      <!-- ใช้ &times; แทนเครื่องหมาย ✕ -->
+      <button type="button" class="close-button" ng-click="onClose()">
+        &times;
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <!-- ใช้ ng-model แบบไม่มี special characters -->
+      <div class="form-group">
+        <label>ลักษณะงาน</label>
+        <input
+          type="text"
+          ng-model="formData.nature"
+          placeholder="กรอกลักษณะงาน..."
+        />
+      </div>
+
+      <div class="form-group">
+        <label>ความรับผิดชอบ</label>
+        <textarea
+          ng-model="formData.responsibility"
+          placeholder="กรอกความรับผิดชอบ..."
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>ตัวชี้วัดผลงาน</label>
+        <textarea
+          ng-model="formData.indicators"
+          placeholder="กรอกตัวชี้วัดผลงาน..."
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>น้ำหนัก (%)</label>
+        <input type="number" ng-model="formData.weight" min="0" max="100" />
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn-reset" ng-click="resetForm()">
+        Reset
+      </button>
+      <button type="button" class="btn-save" ng-click="save()">
+        บันทึกข้อมูล
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="strategy-section">
+  <div class="section-title">
+    การพัฒนางานและงานสนับสนุนยุทธศาสตร์มหาวิทยาลัย
+  </div>
+
+  <!-- Header -->
+  <div class="header-container">
+    <h3 class="section-header">
+      การพัฒนางานและงานสนับสนุนยุทธศาสตร์มหาวิทยาลัย
+    </h3>
+    <button class="add-button">+ เพิ่มการงาน</button>
+  </div>
+
+  <!-- Table -->
+  <div class="table-container">
+    <table class="table" ng-if="strategyTable && strategyTable.length > 0">
+      <thead>
+        <tr>
+          <th>งาน/โครงการ/กิจกรรม</th>
+          <th>ประเภทงาน</th>
+          <th>รายละเอียดงาน/ขอบเขตงาน</th>
+          <th>ตัวชี้วัดมหาวิทยาลัยที่สอดคล้อง</th>
+          <th>เป้าหมาย (ถ้ามี)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in strategyItems">
+          <td>{{item.project}}</td>
+          <td>{{item.type}}</td>
+          <td>{{item.details}}</td>
+          <td>{{item.indicators}}</td>
+          <td>{{item.target}}</td>
+          <td class="action-buttons">
+            <button class="btn btn-edit" ng-click="onEdit({item: item})">
+              Edit
+            </button>
+            <button class="btn btn-delete" ng-click="onDelete({item: item})">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="no-data" ng-if="!strategyTable || strategyTable.length === 0">
+      <div class="no-data-content">
+        <i class="no-data-icon">📋</i>
+        <p class="no-data-text">ไม่พบการพัฒนางานและงานสนับสนุนยุทธศาสตร์</p>
+      </div>
+    </div>
+  </div>
+  <!-- ปุ่มยืนยันข้อมูลทั้งหมด -->
+  <div
+    class="confirm-button-container"
+    ng-if="strategyTable && strategyTable.length > 0"
+  >
+    <button class="confirm-button">ยืนยันข้อมูลทั้งหมด</button>
+  </div>
+</div>

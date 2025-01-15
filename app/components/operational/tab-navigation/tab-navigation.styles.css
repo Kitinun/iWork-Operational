@@ -1,0 +1,105 @@
+/* ==========================================================================
+  Tab Navigation Component Styles
+  ========================================================================== */
+
+/* Container
+  ========================================================================== */
+.tab-container {
+  width: 100%;
+  margin-bottom: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+/* Navigation
+   ========================================================================== */
+.tab-navigation {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+}
+
+/* Tab Buttons
+   ========================================================================== */
+.tab-button {
+  flex: 1;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--gray-100);
+  border: none;
+  border-radius: var(--radius-lg);
+  color: var(--text-gold);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  white-space: normal;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button States
+   ========================================================================== */
+.tab-button:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.tab-button.active {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+
+/* Desktop Large (1280px+)
+   ========================================================================== */
+@media (min-width: 1280px) {
+  .tab-button {
+    font-size: calc(var(--font-size-base) + 0.1rem);
+  }
+}
+
+/* Desktop (1024px - 1279px)
+   ========================================================================== */
+@media (max-width: 1279px) {
+  .tab-navigation {
+    gap: var(--space-sm);
+  }
+}
+
+/* Tablet (768px - 1023px)
+   ========================================================================== */
+@media (max-width: 1023px) {
+  .tab-button {
+    padding: var(--space-sm);
+    font-size: var(--font-size-base);
+    min-height: 70px;
+  }
+}
+
+/* Mobile (<= 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .tab-navigation {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .tab-button {
+    width: 100%;
+    min-height: 50px;
+    padding: var(--space-sm);
+  }
+}
+
+/* Small Devices (<= 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .tab-button {
+    font-size: calc(var(--font-size-base) - 0.1rem);
+  }
+}

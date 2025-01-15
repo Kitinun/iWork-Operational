@@ -1,0 +1,123 @@
+<div class="performance-section">
+  <div class="section-title">ภาระงานหลักและผลการปฏิบัติงาน</div>
+
+  <!-- ตารางภาระงาน -->
+  <div class="header-container">
+    <h3 class="section-header">ภาระงานหลักและผลการปฏิบัติงาน</h3>
+    <button class="add-button" ng-click="openModal()">+ เพิ่มภาระงาน</button>
+  </div>
+
+  <div class="table-container">
+    <table class="table" ng-if="criteria && criteria.length > 0">
+      <thead>
+        <tr>
+          <th>ลักษณะงาน</th>
+          <th>ความรับผิดชอบ</th>
+          <th>ตัวชี้วัดผลงาน</th>
+          <th>น้ำหนัก</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in criteria">
+          <td>{{item.area}}</td>
+          <td>
+            <div
+              ng-repeat="resp in item.responsibilities"
+              class="responsibility-item"
+            >
+              <span class="resp-id">{{resp.id}}</span>
+              <span class="resp-desc">{{resp.description}}</span>
+            </div>
+          </td>
+          <td>{{item.responsibilities[0].indicators}}</td>
+          <td>{{item.responsibilities[0].weight}}</td>
+          <td>
+            <button class="btn btn-edit" ng-click="onEdit({item: item})">
+              Edit
+            </button>
+            <button class="btn btn-delete" ng-click="onDelete({item: item})">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="no-data" ng-if="!criteria || criteria.length === 0">
+      <div class="no-data-content">
+        <i class="no-data-icon">📋</i>
+        <p class="no-data-text">ไม่พบข้อมูล</p>
+        <p class="no-data-subtext">
+          กรุณาเพิ่มข้อมูลโดยคลิกปุ่ม "เพิ่มภาระงาน"
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add modal component -->
+  <iw-performance-form
+    is-open="isModalOpen"
+    on-close="closeModal()"
+    on-save="savePerformance(data)"
+  >
+  </iw-performance-form>
+
+  <!-- ตารางการคุมสอบ -->
+  <div class="exam-supervision-section">
+    <h3 class="section-title">การคุมสอบ</h3>
+    <div class="table-container">
+      <table
+        class="table"
+        ng-if="examSupervisions && examSupervisions.length > 0"
+      >
+        <thead>
+          <tr>
+            <th>วันที่</th>
+            <th>เวลา</th>
+            <th>ตำแหน่ง</th>
+            <th>ผลการปฏิบัติงาน</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="exam in examSupervisions">
+            <td>{{exam.date}}</td>
+            <td>{{exam.time}}</td>
+            <td>{{exam.position}}</td>
+            <td>{{exam.result}}</td>
+            <td>
+              <button class="btn btn-edit" ng-click="onEditExam({exam: exam})">
+                Edit
+              </button>
+              <button
+                class="btn btn-delete"
+                ng-click="onDeleteExam({exam: exam})"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div
+        class="no-data"
+        ng-if="!examSupervisions || examSupervisions.length === 0"
+      >
+        <div class="no-data-content">
+          <i class="no-data-icon">📋</i>
+          <p class="no-data-text">ไม่พบข้อมูลการคุมสอบ</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ปุ่มยืนยันข้อมูลทั้งหมด -->
+  <div
+    class="confirm-button-container"
+    ng-if="examSupervisions || examSupervisions.length === 0"
+  >
+    <button class="confirm-button">ยืนยันข้อมูลทั้งหมด</button>
+  </div>
+</div>

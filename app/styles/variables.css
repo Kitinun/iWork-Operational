@@ -1,0 +1,55 @@
+/* app/styles/variables.css */
+:root {
+  /* Colors */
+  --primary: #f26522;
+  --primary-light: #e5a853;
+  --success: #33cb0d;
+  --danger: #cb180d;
+  --white: #ffffff;
+  --gray-50: #f5f5f5;
+  --gray-100: #f8f9fa;
+  --gray-200: #dee2e6;
+  --gray-700: #333333;
+
+  /* Spacing */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+
+  /* Container */
+  --container-width: 1200px;
+
+  /* Font */
+  --font-family: "Sarabun", sans-serif;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.5rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-lg: 8px;
+
+  /* Shadow */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Breakpoints สำหรับ Responsive */
+  --mobile: 320px;
+  --tablet: 768px;
+  --laptop: 1024px;
+  --desktop: 1280px;
+
+  /* Colors */
+  --primary: #f26522;
+  --bg-light: #ffffff;
+  --bg-gray: #f2f2f7;
+  --text-dark: #000000;
+  --text-gold: #a67436;
+  --border-color: #e5e7eb;
+
+  /* Spacing */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+}

@@ -1,0 +1,46 @@
+<nav class="navbar">
+  <div class="navbar-content">
+    <a href="#" class="navbar-brand">iWork</a>
+
+    <!-- Hamburger Menu Toggle -->
+    <div class="menu-toggle" ng-click="toggleMenu()">
+      <span>☰</span>
+    </div>
+
+    <div class="navbar-menu" ng-class="{ 'active': isMenuOpen }">
+      <a
+        href="#"
+        class="nav-link"
+        ng-class="{ 'active': currentPage === 'reports' }"
+        ng-click="selectPage('reports')"
+        >รายงานสรุป</a
+      >
+      <a
+        href="#"
+        class="nav-link"
+        ng-class="{ 'active': currentPage === 'operational' }"
+        ng-click="selectPage('operational')"
+        >แบบกรอกภาระงานสายปฎิบัติ</a
+      >
+      <a
+        href="#"
+        class="nav-link"
+        ng-class="{ 'active': currentPage === 'yearplan' }"
+        ng-click="selectPage('yearplan')"
+        >แบบประเมินตนเอง</a
+      >
+      <a
+        href="#"
+        class="nav-link"
+        ng-class="{ 'active': currentPage === 'manual' }"
+        ng-click="selectPage('manual')"
+        >คู่มือ</a
+      >
+
+      <div class="user-menu" ng-click="toggleUserMenu()">
+        <div class="user-avatar">{{user.name | firstChar}}</div>
+        <span>{{user.name}}</span>
+      </div>
+    </div>
+  </div>
+</nav>
