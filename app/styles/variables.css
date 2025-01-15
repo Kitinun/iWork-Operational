@@ -1,10 +1,13 @@
-/* app/styles/variables.css */
 :root {
   /* Colors */
   --primary: #f26522;
   --primary-light: #e5a853;
+  --primary-dark: #d14d0a;
   --success: #33cb0d;
   --danger: #cb180d;
+  --danger-light: #ff1f1f1a;
+
+  /* Neutral Colors */
   --white: #ffffff;
   --gray-50: #f5f5f5;
   --gray-100: #f8f9fa;
@@ -12,17 +15,20 @@
   --gray-300: #dee2e6;
   --gray-700: #333333;
 
-  /* Spacing */
-  --space-1: 0.5rem;
-  --space-2: 1rem;
-  --space-3: 1.5rem;
-  --space-4: 2rem;
+  /* Semantic Colors */
+  --text-dark: #000000;
+  --text-light: #ffffff;
+  --text-gray: #666666;
+  --text-gold: #a67436;
+  --border-color: #e5e7eb;
 
-  /* Container */
-  --container-width: 1200px;
+  /* Background Colors */
+  --bg-light: #ffffff;
+  --bg-gray: #f2f2f7;
 
-  /* Font */
+  /* Font Family */
   --font-family: "Ubuntu", sans-serif;
+
   /* Font Weights */
   --font-light: 300;
   --font-regular: 400;
@@ -38,35 +44,39 @@
   --font-size-2xl: 1.5rem; /* 24px */
   --font-size-3xl: 1.875rem; /* 30px */
 
-  /* Border Radius */
-  --radius-sm: 4px;
-  --radius-lg: 8px;
-
-  /* Shadow */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 3px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 8px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 13px rgba(0, 0, 0, 0.1);
-  --shadow-2xl: 0 25px 25px rgba(0, 0, 0, 0.1);
-
-  /* Breakpoints สำหรับ Responsive */
-  --mobile: 320px;
-  --tablet: 768px;
-  --laptop: 1024px;
-  --desktop: 1280px;
-
-  /* Colors */
-  --primary: #f26522;
-  --bg-light: #ffffff;
-  --bg-gray: #f2f2f7;
-  --text-dark: #000000;
-  --text-gold: #a67436;
-  --border-color: #e5e7eb;
-
   /* Spacing */
   --space-xs: 0.25rem; /* 4px */
   --space-sm: 0.5rem; /* 8px */
   --space-md: 1rem; /* 16px */
   --space-lg: 1.5rem; /* 24px */
   --space-xl: 2rem; /* 32px */
+
+  /* Layout */
+  --container-width: 1200px;
+  --header-height: 60px;
+  --footer-height: 60px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 8px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 13px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 25px rgba(0, 0, 0, 0.1);
+
+  /* Breakpoints */
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* Z-index */
+  --z-modal: 1000;
+  --z-dropdown: 100;
+  --z-header: 90;
 }

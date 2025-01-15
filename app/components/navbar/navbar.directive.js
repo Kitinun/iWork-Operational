@@ -13,18 +13,49 @@ angular
             name: "กิตินันท์ คนสอน",
           };
 
-          $scope.currentPage = "operational"; // กำหนดหน้าปัจจุบัน
+          $scope.currentPage = "operational";
           $scope.isMenuOpen = false;
+          $scope.isUserMenuOpen = false; // เพิ่มตัวแปรควบคุม dropdown
 
           $scope.toggleMenu = function () {
             $scope.isMenuOpen = !$scope.isMenuOpen;
+            $scope.isUserMenuOpen = false; // ปิด user menu เมื่อเปิด hamburger menu
+          };
+
+          $scope.toggleUserMenu = function (event) {
+            event.stopPropagation(); // ป้องกันการ bubble ของ event
+            $scope.isUserMenuOpen = !$scope.isUserMenuOpen;
           };
 
           $scope.selectPage = function (page) {
             $scope.currentPage = page;
-            $rootScope.$broadcast("pageChanged", page); // ส่ง event ไปบอก controller อื่นๆ
-            $scope.isMenuOpen = false; // ปิดเมนูเมื่อเลือกหน้าแล้ว
+            $rootScope.$broadcast("pageChanged", page);
+            $scope.isMenuOpen = false;
+            $scope.isUserMenuOpen = false;
           };
+
+          $scope.handleProfileClick = function () {
+            console.log("Navigate to profile");
+            $scope.isUserMenuOpen = false;
+          };
+
+          $scope.handleSettingsClick = function () {
+            console.log("Navigate to settings");
+            $scope.isUserMenuOpen = false;
+          };
+
+          $scope.logout = function () {
+            console.log("Logging out...");
+            $scope.isUserMenuOpen = false;
+          };
+
+          // ปิด dropdown เมื่อคลิกที่อื่น
+          document.addEventListener("click", function () {
+            if ($scope.isUserMenuOpen) {
+              $scope.isUserMenuOpen = false;
+              $scope.$apply();
+            }
+          });
         },
       ],
     };

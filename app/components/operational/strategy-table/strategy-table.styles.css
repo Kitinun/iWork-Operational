@@ -11,40 +11,6 @@
   margin-bottom: var(--space-lg);
 }
 
-/* Header Section
-   ========================================================================== */
-.section-title {
-  color: var(--primary);
-  font-size: var(--font-size-lg);
-  font-weight: 500;
-  margin-bottom: var(--space-md);
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--space-lg);
-}
-
-.add-button {
-  background-color: var(--primary);
-  color: var(--white);
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-sm);
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-size: 0.9rem;
-  transition: opacity 0.3s ease;
-}
-
-.add-button:hover {
-  opacity: 0.9;
-}
-
 /* Table Container
    ========================================================================== */
 .table-container {
@@ -156,26 +122,11 @@
   .table {
     min-width: 1000px;
   }
-
-  .section-title {
-    font-size: var(--font-size-base);
-  }
 }
 
 /* Tablet Portrait (481px - 767px)
    ========================================================================== */
 @media (max-width: 767px) {
-  .header-container {
-    flex-direction: column;
-    gap: var(--space-md);
-    align-items: stretch;
-  }
-
-  .add-button {
-    width: 100%;
-    justify-content: center;
-  }
-
   .table td,
   .table th {
     padding: var(--space-sm);

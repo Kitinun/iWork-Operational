@@ -1,3 +1,5 @@
+/* Reset & Base Styles
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +17,8 @@ body {
   line-height: 1.5;
 }
 
-/* Heading styles */
+/* Typography
+     ========================================================================== */
 h1,
 h2,
 h3,
@@ -26,58 +29,70 @@ h6 {
   font-weight: var(--font-medium);
 }
 
+/* Layout Components
+     ========================================================================== */
 .container {
+  width: 100%;
   max-width: var(--container-width);
   margin: 0 auto;
-  flex: 1 0 auto; /* ทำให้ container ขยายเต็มพื้นที่ที่เหลือ */
-  padding: var(--space-4) var(--space-3);
-}
-
-.footer {
-  flex-shrink: 0; /* ป้องกันไม่ให้ footer หดตัว */
-  background: linear-gradient(
-    90deg,
-    var(--primary-light) 0%,
-    var(--primary) 100%
-  );
-  color: var(--white);
-  padding: var(--space-3) var(--space-4);
-  width: 100%;
+  padding: var(--space-md);
+  flex: 1;
 }
 
 .card {
   background-color: var(--white);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-2xl);
-  padding: var(--space-4);
-  margin-bottom: var(--space-4);
+  padding: var(--space-md);
+  margin: var(--space-md) 0;
+  overflow: hidden;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .no-data {
-    padding: var(--space-lg);
-  }
-
-  .no-data-icon {
-    font-size: 2.5rem;
-  }
-
-  .no-data-text {
-    font-size: var(--font-size-base);
-  }
-
-  .no-data-subtext {
-    font-size: var(--font-size-sm);
-  }
-}
-
-/* Confirm Button
-   ========================================================================== */
-.confirm-button-container {
+/* Header Components
+     ========================================================================== */
+.header-container {
   display: flex;
-  justify-content: center;
-  margin-top: var(--space-xl);
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.section-header {
+  color: var(--text-dark);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+}
+
+.section-title {
+  color: var(--primary);
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  margin-bottom: var(--space-md);
+}
+
+/* Button Components
+     ========================================================================== */
+.btn {
+  padding: var(--space-xs) var(--space-sm);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.add-button {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
 }
 
 .confirm-button {
@@ -85,16 +100,83 @@ h6 {
   color: var(--white);
   padding: var(--space-sm) var(--space-xl);
   border-radius: var(--radius-sm);
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: opacity 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
-.confirm-button:hover {
-  opacity: 0.9;
+/* Empty States
+     ========================================================================== */
+.no-data {
+  padding: var(--space-xl);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  text-align: center;
 }
 
-/* Extra Small Devices
-       ========================================================================== */
+.no-data-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* Footer
+     ========================================================================== */
+.footer {
+  flex-shrink: 0;
+  background: linear-gradient(
+    90deg,
+    var(--primary-light) 0%,
+    var(--primary) 100%
+  );
+  color: var(--white);
+  padding: var(--space-md);
+  width: 100%;
+}
+
+/* Responsive Breakpoints
+     ========================================================================== */
+@media (max-width: var(--breakpoint-xl)) {
+  /* Desktop styles */
+}
+
+@media (max-width: var(--breakpoint-lg)) {
+  /* Laptop styles */
+}
+
+@media (max-width: var(--breakpoint-md)) {
+  /* Tablet styles */
+  .header-container {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .add-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: var(--breakpoint-sm)) {
+  /* Mobile styles */
+  .section-title,
+  .section-header {
+    text-align: center;
+  }
+}
+
+@media (max-width: var(--breakpoint-xs)) {
+  /* Small mobile styles */
+  .add-button {
+    font-size: 0.8rem;
+  }
+}
+
+/* Print Styles
+     ========================================================================== */
+@media print {
+  .add-button {
+    display: none;
+  }
+}

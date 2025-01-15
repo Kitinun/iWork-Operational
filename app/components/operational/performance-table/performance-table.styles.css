@@ -1,278 +1,136 @@
-/* ==========================================================================
-   Performance Table Component Styles
-   ========================================================================== */
-
-/* Main Container
-   ========================================================================== */
-.performance-section {
-  background-color: #fef6ed;
-  padding: var(--space-lg);
-  border-radius: var(--radius-lg);
-}
-
-/* Headers and Titles
-   ========================================================================== */
-.section-title {
-  margin: var(--space-lg) 0;
-  color: var(--primary);
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* ปรับปรุงส่วน Table Container */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin-bottom: var(--space-md);
 }
 
-.section-header {
-  color: var(--text-dark);
-  font-size: var(--font-size-base);
-  font-weight: 500;
-}
-
-/* Action Buttons
-   ========================================================================== */
-.add-button {
-  background-color: var(--primary);
-  color: var(--white);
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-sm);
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-size: 0.9rem;
-  transition: opacity 0.3s ease;
-}
-
-.add-button:hover {
-  opacity: 0.9;
-}
-
-.btn {
-  padding: var(--space-xs) var(--space-sm);
-  border: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  font-size: 0.9rem;
-  min-width: 60px;
-  transition: all 0.3s ease;
-}
-
-.btn-edit {
-  background-color: var(--success);
-  color: var(--white);
-}
-
-.btn-delete {
-  background-color: var(--danger);
-  color: var(--white);
-}
-
-/* Table Styles
-   ========================================================================== */
-.table-container {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-}
-
+/* ปรับปรุงส่วน Table */
 .table {
   width: 100%;
-  border-collapse: collapse;
+  min-width: 800px; /* ลดลงจาก 900px */
   background: var(--white);
 }
 
-.table th {
-  background-color: var(--gray-50);
-  padding: var(--space-md);
-  font-weight: 500;
-  text-align: left;
-  border: 1px solid var(--border-color);
-}
-
-.table td {
-  padding: var(--space-md);
-  border: 1px solid var(--border-color);
-  vertical-align: top;
-}
-
-/* Table Column Widths
-   ========================================================================== */
+/* Column Widths */
 .table th:nth-child(1) {
-  width: 15%;
+  width: 20%;
 }
 .table th:nth-child(2) {
-  width: 45%;
+  width: 35%;
 }
 .table th:nth-child(3) {
-  width: 20%;
+  width: 25%;
 }
 .table th:nth-child(4) {
   width: 10%;
-  text-align: center;
 }
 .table th:nth-child(5) {
   width: 10%;
 }
 
-.table td:nth-child(4) {
-  text-align: center;
+.exam-supervision-section {
+  margin-top: 10px;
 }
 
-/* Responsibility Items
-   ========================================================================== */
-.responsibility-item {
-  display: flex;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-sm);
-  line-height: 1.5;
+/* Exam Table Column Widths */
+.exam-supervision-section .table th:nth-child(1) {
+  width: 15%;
+}
+.exam-supervision-section .table th:nth-child(2) {
+  width: 20%;
+}
+.exam-supervision-section .table th:nth-child(3) {
+  width: 25%;
+}
+.exam-supervision-section .table th:nth-child(4) {
+  width: 30%;
+}
+.exam-supervision-section .table th:nth-child(5) {
+  width: 10%;
 }
 
-.responsibility-item:last-child {
-  margin-bottom: 0;
-}
-
-.resp-id {
-  color: var(--text-dark);
-  min-width: 32px;
-}
-
-.resp-desc {
-  flex: 1;
-}
-
-/* No Data Message
-   ========================================================================== */
-.no-data {
-  padding: var(--space-xl);
-  background: var(--white);
+/* Responsive Design */
+.performance-section {
+  background-color: #fef6ed;
+  padding: var(--space-lg);
   border-radius: var(--radius-lg);
-  text-align: center;
+  margin-bottom: var(--space-lg);
 }
 
-.no-data-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-md);
+.table {
+  font-size: 0.95rem;
 }
 
-.no-data-icon {
-  font-size: 3rem;
-  color: var(--gray-400);
-}
-
-.no-data-text {
-  font-size: var(--font-size-lg);
-  color: var(--text-dark);
-  font-weight: 500;
-}
-
-.no-data-subtext {
-  color: var(--gray-500);
-  font-size: var(--font-size-base);
-}
-
-/* ==========================================================================
-   Responsive Styles
-   ========================================================================== */
-
-/* Desktop Large (1440px+)
-   ========================================================================== */
-@media (min-width: 1440px) {
-  .performance-section {
-    padding: var(--space-xl);
-  }
-
-  .table-container {
-    margin: 0 auto;
-    max-width: var(--container-width);
-  }
-}
-
-/* Desktop (1024px - 1439px)
-   ========================================================================== */
-@media (max-width: 1439px) {
-  .performance-section {
-    padding: var(--space-lg);
-  }
-}
-
-/* Tablet Landscape (768px - 1023px)
-   ========================================================================== */
-@media (max-width: 1023px) {
-  .performance-section {
-    padding: var(--space-md);
-  }
-
-  .section-title {
-    font-size: 1.1rem;
-  }
-}
-
-/* Tablet Portrait (481px - 767px)
-   ========================================================================== */
-@media (max-width: 767px) {
-  .table-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .table {
-    min-width: 800px;
-  }
-
-  .header-container {
-    flex-direction: column;
-    gap: var(--space-md);
-  }
-
-  .add-button {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-/* Mobile (320px - 480px)
-   ========================================================================== */
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
   .performance-section {
     padding: var(--space-sm);
   }
+}
 
-  .section-title {
-    font-size: 1rem;
-    text-align: center;
+@media (max-width: 768px) {
+  .table {
+    min-width: 650px; /* ลดลงอีกสำหรับ tablet */
   }
 
-  .responsibility-item {
-    flex-direction: column;
-    gap: var(--space-xs);
-  }
-
-  .no-data {
-    padding: var(--space-lg);
-  }
-
-  .no-data-icon {
-    font-size: 2.5rem;
+  .btn {
+    min-width: auto;
+    padding: var(--space-xs);
   }
 }
 
-/* Extra Small Devices
-   ========================================================================== */
-@media (max-width: 320px) {
-  .btn {
-    font-size: 0.8rem;
-    padding: var(--space-xs);
+/* ปรับปรุงส่วน Confirm Button */
+.confirm-button-container {
+  margin-top: var(--space-lg);
+  padding: 0 var(--space-md);
+}
+
+.confirm-button {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.confirm-button:hover {
+  opacity: 0.9;
+}
+
+/* Mobile Design */
+@media (max-width: 480px) {
+  .table td,
+  .table th {
+    font-size: 0.9rem;
+  }
+
+  .no-data-icon {
+    font-size: 2rem;
   }
 
   .no-data-text {
-    font-size: var(--font-size-base);
+    font-size: 1rem;
+  }
+
+  .confirm-button {
+    width: 100%;
+    max-width: none;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Screen Optimization */
+@media (max-width: 320px) {
+  .btn {
+    min-width: 40px;
+    padding: var(--space-xs);
   }
 }

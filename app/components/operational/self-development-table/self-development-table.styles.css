@@ -12,38 +12,9 @@
 
 /* Header Section
    ========================================================================== */
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--space-md);
-}
-
-.section-header {
-  color: var(--text-dark);
-  font-size: var(--font-size-base);
-  font-weight: 500;
-}
 
 /* Add Button
    ========================================================================== */
-.add-button {
-  background-color: var(--primary);
-  color: var(--white);
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-sm);
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-size: 0.9rem;
-  transition: opacity 0.3s ease;
-}
-
-.add-button:hover {
-  opacity: 0.9;
-}
 
 /* Table Container
    ========================================================================== */
@@ -153,21 +124,6 @@
 /* Tablet Portrait (481px - 767px)
    ========================================================================== */
 @media (max-width: 767px) {
-  .header-container {
-    flex-direction: column;
-    gap: var(--space-md);
-    align-items: stretch;
-  }
-
-  .section-header {
-    text-align: center;
-  }
-
-  .add-button {
-    width: 100%;
-    justify-content: center;
-  }
-
   .table {
     min-width: 1400px;
   }
@@ -186,28 +142,12 @@
   }
 }
 
-/* Extra Small Devices
-   ========================================================================== */
-@media (max-width: 320px) {
-  .section-header {
-    font-size: var(--font-size-sm);
-  }
-
-  .add-button {
-    font-size: 0.8rem;
-  }
-}
-
 /* Print Styles
    ========================================================================== */
 @media print {
   .self-development-section {
     background: none;
     padding: 0;
-  }
-
-  .add-button {
-    display: none;
   }
 
   .table {
